@@ -19,11 +19,12 @@ const Input = styled.input`
 `
 
 const Container = styled.div`
-  background-color: #606160;
+  background-color: #353937;
   height: auto;
   height: 600px;
   width: 400px;
   border-radius: 15px;
+  box-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em darkblue;
 `
 const Param = styled.h1`
   color: white;
