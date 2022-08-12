@@ -6,7 +6,6 @@ import { Colors, Devices } from './Theme'
 import SearchBar from './Header/SearchBar'
 import SearchBarMob from './Header/MobileSearchBar'
 import { useState } from 'react'
-import Signup from '../../pages/signup'
 import Link from 'next/link'
 
 const HeaderEl = styled.header`
@@ -131,8 +130,8 @@ export default function Header({ mobileMenu }) {
               </Link>
             </li>
             <li>
-              <Link href="#">
-                <a>Drops</a>
+              <Link href="/colection">
+                <a>colections</a>
               </Link>
             </li>
             <li>
