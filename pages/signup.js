@@ -6,29 +6,22 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: red;
 `
-const Input1 = styled.input`
-  margin-top: 4rem;
-  width: 300px;
-  margin-left: 20px;
-  height: 35px;
+const Input = styled.input`
+  width: 100%;
+  height: 40px;
   border: none;
   padding: 10px;
   border-radius: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #b5bcb9;
 `
-const Input2 = styled.input`
-  margin-top: 5rem;
-  width: 300px;
-  margin-left: 20px;
-  height: 35px;
-  border: none;
-  padding: 10px;
-  border-radius: 7px;
-`
+
 const Container = styled.div`
-  background-color: black;
-  height: 450px;
+  background-color: #606160;
+  height: auto;
+  height: 600px;
   width: 400px;
   border-radius: 15px;
 `
@@ -44,24 +37,33 @@ const Form = styled.form`
   width: 350px;
   height: 300px;
 `
-const Button= styled.button`
-  margin-left: 125px;
-  margin-top: 2rem;
-  width: 100px;
-  height: 25px;
-  border: none;
+const Button = styled.button`
+  background-color:#b5bcb9;
   border-radius: 7px;
+  margin-top: 1rem;
+  width: 100%;
+  height: 45px;
+  border: none;
 `
-
-export default function Signup() {
+const Label = styled.label`
+  color: white;
+  padding-top: 1rem;
+`
+export default function signup() {
   return (
     <Main>
       <Container>
-        <Param>signup</Param>
+        <Param>Signup</Param>
         <Form>
-          <Input1 placeholder="user name..." />
-          <Input2 placeholder="password.." />
-          <Button>signup</Button>
+          <Label>First Name</Label>
+          <Input placeholder="first name" />
+          <Label>Last name:</Label>
+          <Input placeholder="last name" />
+          <Label>Email:</Label>
+          <Input placeholder="email" />
+          <Label>Password:</Label>
+          <Input placeholder="password.." />
+          <Button>signin</Button>
         </Form>
       </Container>
     </Main>

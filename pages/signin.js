@@ -1,29 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
 
-
-
-
 const Main = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 `
-const Input1 = styled.input`
-  width: 300px;
+const Input = styled.input`
+  width: 100%;
   height: 40px;
   border: none;
   padding: 10px;
   border-radius: 7px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #b5bcb9;
 `
-const Input2 = styled.input`
-  width: 300px;
-  height: 40px;
-  border: none;
-  padding: 10px;
-  border-radius: 7px;
-`
+
 const Container = styled.div`
   background-color: #353937;
   height: 450px;
@@ -43,27 +37,27 @@ const Form = styled.form`
   height: 300px;
 `
 const Button = styled.button`
-  margin-left: 125px;
-  margin-top: 2rem;
-  width: 100px;
+  background-color: #b5bcb9;
+  border-radius: 7px;
+  margin-top: 1rem;
+  width: 100%;
   height: 45px;
   border: none;
-  border-radius: 7px;
 `
 const Label = styled.label`
   color: white;
-  
+  padding-top: 1rem;
 `
 export default function signin() {
   return (
     <Main>
       <Container>
-        <Param>signin</Param>
+        <Param>Signin</Param>
         <Form>
           <Label>Username:</Label>
-          <Input1 placeholder="user name..." />
+          <Input placeholder="user name..." />
           <Label>Password:</Label>
-          <Input2 placeholder="password.." />
+          <Input placeholder="password.." />
           <Button>signin</Button>
         </Form>
       </Container>
