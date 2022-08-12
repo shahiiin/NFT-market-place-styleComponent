@@ -156,7 +156,8 @@ const Items = [
   },
 ];
 
-export default function Hero() {
+export default function 
+Hero() {
   const [Index, setIndex] = useState(0);
   const [Slides, setSlides] = useState(Items);
   const [CurSlide, setCurSlide] = useState(Items[0]);

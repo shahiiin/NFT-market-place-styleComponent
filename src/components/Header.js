@@ -1,12 +1,13 @@
-import styled from "styled-components";
-import { FiMenu } from "react-icons/fi";
-import { CgSearch } from "react-icons/cg";
-import { IoClose } from "react-icons/io5";
-import { Colors, Devices } from "./Theme";
-import Button from "./styled/Button.styled";
-import SearchBar from "./Header/SearchBar";
-import SearchBarMob from "./Header/MobileSearchBar";
-import { useState } from "react";
+import styled from 'styled-components'
+import { FiMenu } from 'react-icons/fi'
+import { CgSearch } from 'react-icons/cg'
+import { IoClose } from 'react-icons/io5'
+import { Colors, Devices } from './Theme'
+import SearchBar from './Header/SearchBar'
+import SearchBarMob from './Header/MobileSearchBar'
+import { useState } from 'react'
+import Signup from '../../pages/signup'
+import Link from 'next/link'
 
 const HeaderEl = styled.header`
   z-index: 10;
@@ -25,26 +26,26 @@ const HeaderEl = styled.header`
     font-size: 2rem;
     cursor: pointer;
   }
-`;
+`
 
 const Center = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-`;
+`
 
 const LogoText = styled.a`
   font-size: 1.2rem;
   font-weight: 500;
   color: #bbbbbb;
-`;
+`
 
 const Logo = styled.img`
   width: 45px;
   border-right: 1px solid ${Colors.Gray};
   padding-right: 1rem;
-`;
+`
 
 const Nav = styled.nav`
   margin-left: auto;
@@ -62,12 +63,12 @@ const Nav = styled.nav`
   @media ${Devices.Laptop} {
     display: block;
   }
-`;
+`
 
 const NavItem = styled.a`
   font-size: 1rem;
   font-weight: 400;
-`;
+`
 
 const SearchIcon = styled.span`
   display: flex;
@@ -77,8 +78,8 @@ const SearchIcon = styled.span`
   @media ${Devices.Laptop} {
     display: none;
   }
-`;
-const MenuIcon = styled(SearchIcon)``;
+`
+const MenuIcon = styled(SearchIcon)``
 
 const AuthItems = styled(NavItem)`
   font-size: 1rem;
@@ -86,14 +87,14 @@ const AuthItems = styled(NavItem)`
   @media ${Devices.Laptop} {
     display: inherit;
   }
-`;
+`
 
 export default function Header({ mobileMenu }) {
-  const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu;
-  const [SearchIsOpen, setSearchIsOpen] = useState(false);
+  const { MobileMenuIsOpen, setMobileMenuIsOpen } = mobileMenu
+  const [SearchIsOpen, setSearchIsOpen] = useState(false)
 
   function toggleMenu() {
-    setMobileMenuIsOpen(!MobileMenuIsOpen);
+    setMobileMenuIsOpen(!MobileMenuIsOpen)
   }
 
   return (
@@ -101,16 +102,16 @@ export default function Header({ mobileMenu }) {
       <MenuIcon>
         {MobileMenuIsOpen ? (
           <IoClose
-            style={{ fontSize: "2.5rem" }}
+            style={{ fontSize: '2.5rem' }}
             color={Colors.Primary}
             onClick={() => {
-              toggleMenu();
+              toggleMenu()
             }}
           />
         ) : (
           <FiMenu
             onClick={() => {
-              toggleMenu();
+              toggleMenu()
             }}
           />
         )}
@@ -122,16 +123,22 @@ export default function Header({ mobileMenu }) {
         <Nav>
           <ul>
             <li>
-              <NavItem href="#">Marketplace</NavItem>
+              <Link
+                target="_blank"
+                href="https://www.binance.com/en/nft/home?ads=true&utm_source=googleadwords_int&utm_medium=cpc&utm_campaign=paid_NFT&ref=HDYAHEES&gclid=CjwKCAjw9NeXBhAMEiwAbaY4lt_x3Uf_bJozDFxzbpoCpowJxYR5IeXnwGAtrEkFqTa9bc3yo-5HDBoCmu4QAvD_BwE"
+              >
+                <a>Marketplace</a>
+              </Link>
             </li>
             <li>
-              <NavItem href="#">Drops</NavItem>
+              <Link href="#">
+                <a>Drops</a>
+              </Link>
             </li>
             <li>
-              <NavItem href="#">Brands</NavItem>
-            </li>
-            <li>
-              <Button>Create</Button>
+              <Link href="#">
+                <a>Brands</a>
+              </Link>
             </li>
           </ul>
         </Nav>
@@ -142,17 +149,21 @@ export default function Header({ mobileMenu }) {
           setSearchIsOpen={setSearchIsOpen}
         />
       ) : (
-        ""
+        ''
       )}
-      <AuthItems href="#">Sign In</AuthItems>
-      <AuthItems href="#">Sign Up</AuthItems>
+      <Link href="/signin">
+        <a>Sign In</a>
+      </Link>
+      <Link href="/signup">
+        <a>Sign Up</a>
+        </Link>
       <SearchIcon>
         <CgSearch
           onClick={() => {
-            setSearchIsOpen(!SearchIsOpen);
+            setSearchIsOpen(!SearchIsOpen)
           }}
         />
       </SearchIcon>
     </HeaderEl>
-  );
+  )
 }
